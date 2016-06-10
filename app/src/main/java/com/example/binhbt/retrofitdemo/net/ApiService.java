@@ -9,6 +9,8 @@ import retrofit.GsonConverterFactory;
 import retrofit.Retrofit;
 import retrofit.http.GET;
 import retrofit.http.Path;
+import retrofit.http.Query;
+import retrofit.http.QueryMap;
 
 /**
  * Created by binhbt on 6/7/2016.
@@ -41,6 +43,7 @@ public class ApiService {
         @GET("user_{userId}.json")
         public Call<User>
         userEntityById(@Path("userId") int userId);
+
         /*
         //GET for url http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=2de143494c0b295cca9337e1e96b00e0
         @GET("data/2.5/weather")
@@ -65,7 +68,6 @@ public class ApiService {
         askForSignup(@Field("name") String userName,
                      @Field("email") String userEmail,
                      @Field("password") String userPassword);
-
         @FormUrlEncoded
         @POST("signin")
         public Call<UserEntity>
